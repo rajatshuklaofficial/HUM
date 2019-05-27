@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html ng-app="uefa" ng-controller="myCtrl">
+<head>
+	<title>UEFA</title>
+	<link rel="stylesheet" href="style.css">
+	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.js"></script>
+	 <script src="app.js"></script>
+</head>
+<body>
+ <div id="showtems">
+ 	<p align="center" class="a">
+ 		In the UEFA Champions League, the group stage comprises of 32 football clubs.
+        This year, the following teams have qualified:
+ 	</p>
+ 	<div ng-repeat="team in teams">
+ 		<div align="center">{{team}}</div>
+ 	</div>
+ 	</div>
+ 	<br><br>
+    <div align="center" >
+ 		<button class="button" ng-click=fun()>Create groups</button>
+    </div>
+    <br><br>
+ <table>
+ 	
+ 		<div ng-repeat="y in x">
+ 			{{y}}
+ 		</div>
+
+ 	<div id="the whole thing" style="height:100%; width:100%; overflow: hidden; ">
+	    <div id="heading" style="float: left; width:25%; ">Group A
+	    	<div ng-repeat="a in A">
+	    		<img width="25" height="25" src={{a}}.png>
+	    	  {{a}}
+	    	</div>
+	    </div>
+	    <div id="heading" style="float: left; width:25%; ">Group B
+	    	<div ng-repeat="b in B">
+	    		<img width="25" height="25" src={{b}}.png>
+	    	{{b}}
+	        </div>
+	    </div>
+	    <div id="heading" style="float: left; width:25%; ">Group C
+	    	<div ng-repeat="c in C">
+	    		<img width="25" height="25" src={{c}}.png>
+	    	{{c}}
+	        </div>
+	    </div>
+	    <div id="heading" style="float: left; width:25%; ">Group D
+	    	<div ng-repeat="d in D">
+	    		<img width="25" height="25" src={{d}}.png>
+	    	{{d}}
+	        </div>
+	    </div>
+ 		<br><br>
+   </div>
+   <div id="the whole thing" style="height:100%; width:100%; overflow: hidden; ">
+	    <div id="heading" style="float: left; width:25%; ">Group E
+	    	<div ng-repeat="e in E">
+	    		<img width="25" height="25" src={{e}}.png>
+	    	{{e}}
+	       </div>
+	    </div>
+	    <div id="heading" style="float: left; width:25%; ">Group F
+	    	<div ng-repeat="f in F">
+	    		<img width="25" height="25" src={{f}}.png>
+	    	{{f}}
+	       </div>
+	    </div>
+	    <div id="heading" style="float: left; width:25%; ">Group G
+	    	<div ng-repeat="g in G">
+	    		<img width="25" height="25" src={{g}}.png>
+	    	{{g}}
+	    </div>
+	    </div>
+	    <div id="heading" style="float: left; width:25%; ">Group H
+	    	<div ng-repeat="h in H">
+	    		<img width="25" height="25" src={{h}}.png>
+	    	{{h}}
+	       </div>
+	    </div>
+ 		
+   </div>
+   
+ </table>
+</body>
+</html>
