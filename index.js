@@ -25,7 +25,7 @@
             "G":[],
             "H":[],
             }
-            
+            try{
             rand = function(min, max) {
               if (min==null && max==null)
                 return 0;    
@@ -50,8 +50,9 @@
                 obj[group].push(k[0])
                 prev_country.push(k[1])
                 d.splice(rn,1);
-                while(j<3) {
+                while(j<32) {
                  var rn2=rand(0,o.length-1)
+                 console.log("rn2"+rn2)
                  var l=o[rn2].split("(")
                  var t_country=l[1]
                  console.log(t_country)
@@ -71,22 +72,32 @@
                  if (count) {
                   console.log("yes")
                   continue;
+                  j++
                  }
                  else{
                     obj[group].push(l[0])
                     prev_country.push(t_country)
                     o.splice(rn2,1)
                     j++; 
+                 }
+                 console.log(obj[group].length)
+                 if (obj[group].length==4) {
+                  j=32
                  }   
                 }
-                for (var q = o_temp.length - 1; q >= 0; i--) {
+                for (var q = 0; q <=o_temp.length-1; q++) {
                    o.push(o_temp[q])
+                   console.log(q)
                  }    
                  console.log("o")
                  console.log(o)
             }
             console.log("ok")
             res.send(obj)
+          }
+          catch(err){
+            res.send(obj)
+          }
         })
     app.get('/app.js',function(req,res){
         res.sendFile(__dirname+"/client/app.js");
