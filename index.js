@@ -1,5 +1,9 @@
     var express = require('express');
     var app = express();
+    var bodyParser = require('body-parser');
+    const path = require('path');
+    app.use(bodyParser.json());
+    app.use(express.static('public'))
     var  result={ "teams" : [ "Arsenal(ENG)", "Astana(KAZ)", "Atlético(ESP)", "Barcelona(ESP)", "BATE(BLR)", "Bayern(GER)", "Benfica(POR)", "Chelsea(ENG)", "CSKA Moskva(RUS)", "Dinamo Zagreb(CRO)", "Dynamo Kyiv(UKR)", "Galatasaray(TUR)", "Gent(BEL)", "Juventus(ITA)", "Leverkusen(GER)", "Lyon(FRA)", "Manchester Tel-Aviv(ISR)", "Malmö(SWE)", "Manchester City(ENG)", "Manchester United(ENG)", "Mönchengladbach(GER)", "Olympiacos(GRE)", "Paris(FRA)", "Porto(POR)", "PSV(NED)", "Real Madrid(ESP)", "Roma(ITA)", "Sevilla(ESP)", "Shakhtar Donetsk(UKR)", "Valencia(ESP)", "Wolfsburg(GER)", "Zenit(RUS)" ], "domastic" : [ "Barcelona(ESP)", "Bayern(GER)", "Benfica(POR)", "Chelsea(ENG)", "Juventus(ITA)", "Paris(FRA)", "PSV(NED)", "Zenit(RUS)" ], "others" : [ "Arsenal(ENG)", "Astana(KAZ)", "Atlético(ESP)", "BATE(BLR)", "CSKA Moskva(RUS)", "Dinamo Zagreb(CRO)", "Dynamo Kyiv(UKR)", "Galatasaray(TUR)", "Gent(BEL)", "Leverkusen(GER)", "Lyon(FRA)", "Manchester Tel-Aviv(ISR)", "Malmö(SWE)", "Manchester City(ENG)", "Manchester United(ENG)", "Mönchengladbach(GER)", "Olympiacos(GRE)", "Porto(POR)", "Real Madrid(ESP)", "Roma(ITA)", "Sevilla(ESP)", "Shakhtar Donetsk(UKR)", "Valencia(ESP)", "Wolfsburg(GER)" ] }
     
     app.get('/',function(req,res){
