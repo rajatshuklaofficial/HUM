@@ -49,28 +49,47 @@
             }
             var d=result.domastic
             var o=result.others
+            var count=0
             for (var i = 0; i <= 7; i++) {
+                var o_temp=[]
+                var prev_country=[]
+                console.log(obj)
                 var j=0
                 var group = String.fromCharCode(65+i);
                 var rn=rand(0,7-i)
                 var k=d[rn].split("(")
                 obj[group].push(k[0])
-                var prev_country=k[1]
+                prev_country.push(k[1])
                 d.splice(rn,1);
                 while(j<3) {
                  var rn2=rand(0,o.length-1)
                  var l=o[rn2].split("(")
                  var t_country=l[1]
-                 if (t_country==prev_country) {
-                    continue;
+                 for (var p = prev_country.length - 1; p >= 0; p--) {
+                   if (t_country==prev_country[p]) {
+                    o_temp.push(o[rn2])
+                    o.splice(rn2,1)
+                    count = 1
+                    break;
+                        }
+                    else{
+                      count=0
+                    }
+                    }
+                 if (count) {
+                  
+                  continue;
                  }
                  else{
                     obj[group].push(l[0])
+                    prev_country.push(t_country)
                     o.splice(rn2,1)
                     j++; 
-                 }
-                    
-                }    
+                 }   
+                }
+                for (var q = o_temp.length - 1; q >= 0; i--) {
+                   o.push(o_temp[q])
+                 }    
             }
             console.log("ok")
             res.send(obj)
